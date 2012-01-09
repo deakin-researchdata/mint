@@ -1,0 +1,271 @@
+{
+    "version": "1.0.5.3",
+    "redbox.version.string": "${redbox.version}",
+    "redbox.identity": {
+        "institution": "University of Examples",
+        "RIF-CS Group": "The University of Examples, Australia"
+    },
+    "configured": true,
+    "urlBase": "${server.url.base}",
+    "email": "DO_NOT_CHANGE",
+    "sso": {
+        "plugins": [],
+        "urlExclusions": {
+            "startsWith": ["css/", "feed/", "images/", "js/", "flowplayer/"],
+            "endsWith": [".ico"],
+            "equals": ["css"]
+        },
+        "trustTokens": {
+        }
+    },
+    "accesscontrol": {
+        "type": "derby",
+        "derby": {
+        }
+    },
+    "authentication": {
+        "type": "internal",
+        "internal": {
+            "path": "${fascinator.home}/security/users.properties"
+        }
+    },
+    "roles": {
+        "type": "internal",
+        "internal": {
+            "path": "${fascinator.home}/security/roles.properties"
+        }
+    },
+    "storage": {
+        "type": "file-system",
+        "file-system": {
+            "home": "${storage.home}"
+        }
+    },
+    "messaging": {
+        "url": "tcp://localhost:${amq.port}",
+        "stompUrl": "stomp://localhost:${amq.stomp.port}",
+        "home": "${fascinator.home}/activemq-data",
+        "startup": {
+            "delay": "5000",
+            "timer": "15000"
+        },
+        "statistics": {
+            "enabled": true,
+            "destination": "houseKeeping"
+        },
+        "toolChainQueue": "transactionManager",
+        "threads": [
+            {
+                "id": "transactionManager",
+                "description": "Transaction Manager Queue for complicated tool chains.",
+                "priority": "5",
+                "config": {
+                    "name": "transactionManager",
+                    "transactionManagerPlugin": "curation-mint"
+                }
+            },
+            {
+                "id": "solrwrapper",
+                "description": "Wrapper for ingest into main Solr core.",
+                "priority": "5",
+                "config": {
+                    "name": "solrwrapper"
+                }
+            },
+            {
+                "id": "subscriber",
+                "description": "Subscriber queue for event log.",
+                "priority": "7",
+                "config": {
+                    "name": "subscriber",
+                    "subscribers": ["solr-event-log"]
+                }
+            },
+            {
+                "id": "emailnotification",
+                "description": "Queue to send email notifications",
+                "priority": "8",
+                "config": {
+                    "name": "emailnotification",
+                    "debug": false,
+                    "from": {
+                        "email": "${admin.email}",
+                        "name": "The Mint"
+                    },
+                    "smtp": {
+                        "host": "${smtp.host}"
+                    },
+                    "defaults": {
+                        "subject": "Notification",
+                        "body": "Default email message"
+                    }
+                }
+            }
+        ]
+    },
+    "curation": {
+        "curationEmailAddress": "${admin.email}",
+        "curationRequiresConfirmation": false,
+        "pidProperty": "localPid"
+    },
+    "indexer": {
+        "type": "solr",
+        "properties": "TF-OBJ-META",
+        "useCache": true,
+        "buffer": {
+            "docLimit": "200",
+            "sizeLimit": "204800",
+            "timeLimit": "30"
+        },
+        "solr": {
+            "uri": "http://localhost:${jetty.port}/solr/fascinator",
+            "coreName": "fascinator",
+            "autocommit": false,
+            "embedded": false
+        },
+        "anotar": {
+            "uri": "http://localhost:${jetty.port}/solr/anotar",
+            "coreName": "anotar",
+            "autocommit": true
+        }
+    },
+    "transformerDefaults": {
+        "ingest-relations": {
+            "id": "ingest-relations"
+        },
+        "local": {
+            "id": "local",
+            "useIncrements": false
+        },
+        "jsonVelocity": {
+            "id" : "jsonVelocity",
+            "sourcePayload" : "metadata.json",
+            "templatesPath" : "${fascinator.home}/templates",
+            "portalId": "default"
+        }
+    },
+    "uploader": {
+    },
+    "mime-types": {
+        "tfpackage": "application/x-fascinator-package"
+    },
+    "database-service": {
+        "derbyHome": "${fascinator.home}/database-service"
+    },
+    "portal": {
+        "home": "${portal.home}",
+        "contentDir": "${fascinator.home}/content",
+        "defaultView": "default",
+        "skins": {
+            "default": "default",
+            "order": [ "local", "mint" ]
+        },
+        "caching": {
+            "caches": {
+                "scriptObjects": {
+                    "label": "Cache for Jython scripts",
+                    "profile": "dynamic",
+                    "lastModifiedCheck": true
+                },
+                "pathLookup": {
+                    "label": "Cache for path lookups",
+                    "profile": "full"
+                }
+            },
+            "profiles": {
+                "default": {
+                    "label": "Factory defaults",
+                    "refreshIntervalSeconds": 30,
+                    "maxElementsInMemory": 10000,
+                    "eternal": false,
+                    "timeToIdleSeconds": 120,
+                    "timeToLiveSeconds": 120,
+                    "overflowToDisk": false,
+                    "maxElementsOnDisk": 10000,
+                    "diskPersistent": false,
+                    "memoryStoreEvictionPolicy": "LRU"
+                },
+                "off": {
+                    "label": "Disabled",
+                    "maxElementsInMemory": 1,
+                    "eternal": false,
+                    "timeToIdleSeconds": 0,
+                    "timeToLiveSeconds": 0,
+                    "overflowToDisk": false,
+                    "maxElementsOnDisk": 1,
+                    "diskPersistent": false,
+                    "memoryStoreEvictionPolicy": "LRU"
+                },
+                "dynamic": {
+                    "label": "Dynamic - Caches are refreshed periodically",
+                    "maxElementsInMemory": 25000,
+                    "eternal": false,
+                    "timeToIdleSeconds": 120,
+                    "timeToLiveSeconds": 300,
+                    "overflowToDisk": false,
+                    "maxElementsOnDisk": 25000,
+                    "diskPersistent": false,
+                    "memoryStoreEvictionPolicy": "LRU"
+                },
+                "full": {
+                    "label": "Full - Caches never expire",
+                    "maxElementsInMemory": 100000,
+                    "eternal": true,
+                    "timeToIdleSeconds": 0,
+                    "timeToLiveSeconds": 0,
+                    "overflowToDisk": true,
+                    "maxElementsOnDisk": 100000,
+                    "diskPersistent": false,
+                    "memoryStoreEvictionPolicy": "LRU"
+                }
+            }
+        },
+        "layout": "layout",
+        "nativeJython": true,
+        "packageTypes": {
+            "default": {
+                "jsonconfig": "packaging-config.json",
+                "packages-in-package": false
+            }
+        },
+        "harvestFiles": "${fascinator.home}/harvest",
+        "houseKeeping": {
+            "config": {
+                "derbyHome": "${fascinator.home}/database",
+                "quartzConfig": "${fascinator.home}/quartz.properties",
+                "desktop": true,
+                "frequency": "3600",
+                "jobs": []
+            }
+        },
+        "oai-pmh": {
+            "sessionExpiry": "300000",
+            "metadataFormats": {
+                "rif": {
+                    "enabledInAllViews": false,
+                    "enabledViews": ["published"],
+                    "schema": "http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/home/orca/schemata/registryObjects.xsd",
+                    "metadataNamespace": "http://ands.org.au/standards/rif-cs/registryObjects"
+                }
+            }
+        }
+    },
+    "subscriber": {
+        "solr-event-log": {
+            "uri": "http://localhost:${jetty.port}/solr/eventlog",
+            "buffer": {
+                "docLimit": "200",
+                "sizeLimit": "204800",
+                "timeLimit": "30"
+            }
+        }
+    },
+    "restoreTool": {
+        "harvestRemap": {
+            "enabled": true,
+            "allowOlder": false,
+            "failOnMissing": false
+        },
+        "migrationScript": ""
+    }
+}
