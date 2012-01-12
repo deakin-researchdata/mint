@@ -13,7 +13,7 @@
     </parent>
     <properties>
         <!-- Used in build -->
-        <mint.version>${project.version}</mint.version>
+        <mint.version>1.4</mint.version>
 
         <!-- Runtime values, will replace placeholders
              in config and control scripts -->
