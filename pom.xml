@@ -34,7 +34,15 @@
         <non.proxy.hosts>localhost</non.proxy.hosts>
     </properties>
     <dependencies>
-        <!-- Mint Core - Will also draw in most other dependencies -->
+        <!-- Mint Core - We want to explicitly define versions here because
+             ReDBox is listed as both a dependency and a parent. Some odd
+             consequences of using ${project.version} can result -->
+        <dependency>
+            <groupId>com.googlecode.redbox-mint</groupId>
+            <artifactId>mint-project</artifactId>
+            <type>pom</type>
+            <version>${mint.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.googlecode.redbox-mint</groupId>
             <artifactId>mint</artifactId>
@@ -44,6 +52,11 @@
         <dependency>
             <groupId>com.googlecode.redbox-mint</groupId>
             <artifactId>mint-config</artifactId>
+            <version>${mint.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.redbox-mint</groupId>
+            <artifactId>plugin-transaction-curation-mint</artifactId>
             <version>${mint.version}</version>
         </dependency>
         <!-- Mint Curation Plugin -->
