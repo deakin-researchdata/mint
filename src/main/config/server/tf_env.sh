@@ -14,7 +14,7 @@ export NON_PROXY_HOSTS="${non.proxy.hosts}"
 
 # set fascinator home directory
 export TF_HOME="$PROJECT_HOME/home"
-export REDBOX_VERSION="${project.version}"
+export REDBOX_VERSION="${mint.version}"
 
 # java class path
 export CLASSPATH="plugins/*:lib/*"

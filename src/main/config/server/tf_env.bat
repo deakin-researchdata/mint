@@ -11,7 +11,7 @@ set NON_PROXY_HOSTS="${non.proxy.hosts}"
 
 REM this script sets the environment for the fascinator scripts
 set FASCINATOR_HOME=%PROJECT_HOME%/home
-set REDBOX_VERSION=${project.version}
+set REDBOX_VERSION=${mint.version}
 set CLASSPATH=plugins/*;lib/*
 
 REM Logging directories
