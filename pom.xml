@@ -9,11 +9,11 @@
     <parent>
         <groupId>com.googlecode.redbox-mint</groupId>
         <artifactId>mint</artifactId>
-        <version>1.5-SNAPSHOT</version>
+        <version>1.5RC1</version>
     </parent>
     <properties>
         <!-- Used in build -->
-        <mint.version>1.5-SNAPSHOT</mint.version>
+        <mint.version>1.5RC1</mint.version>
 
         <!-- Runtime values, will replace placeholders
              in config and control scripts -->
