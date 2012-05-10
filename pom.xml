@@ -9,11 +9,11 @@
     <parent>
         <groupId>com.googlecode.redbox-mint</groupId>
         <artifactId>mint</artifactId>
-        <version>1.5RC1</version>
+        <version>1.5RC2-SNAPSHOT</version>
     </parent>
     <properties>
         <!-- Used in build -->
-        <mint.version>1.5RC1</mint.version>
+        <mint.version>1.5RC2-SNAPSHOT</mint.version>
 
         <!-- Runtime values, will replace placeholders
              in config and control scripts -->
@@ -57,6 +57,11 @@
         <dependency>
             <groupId>com.googlecode.redbox-mint</groupId>
             <artifactId>plugin-transaction-curation-mint</artifactId>
+            <version>${mint.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.redbox-mint</groupId>
+            <artifactId>sruclient-mint</artifactId>
             <version>${mint.version}</version>
         </dependency>
         <!-- Mint Curation Plugin -->

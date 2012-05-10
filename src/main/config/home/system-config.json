@@ -106,7 +106,14 @@
     "curation": {
         "curationEmailAddress": "${admin.email}",
         "curationRequiresConfirmation": false,
-        "pidProperty": "localPid"
+        "pidProperty": "localPid",
+        "nlaIntegration": {
+            "enabled": true,
+            "pidProperty": "nlaPid",
+            "includeTest": {
+                "repository.name": "People"
+            }
+        }
     },
     "indexer": {
         "type": "solr",
@@ -235,7 +242,14 @@
                 "quartzConfig": "${fascinator.home}/quartz.properties",
                 "desktop": true,
                 "frequency": "3600",
-                "jobs": []
+                "jobs": [
+                    {
+                        "name": "nla-poll",
+                        "type": "external",
+                        "url": "http://localhost:${jetty.port}/mint/default/hkjobs/nla.script",
+                        "timing": "0 0/15 * * * ?"
+                    }
+                ]
             }
         },
         "oai-pmh": {
