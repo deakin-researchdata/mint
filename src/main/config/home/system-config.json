@@ -110,6 +110,8 @@
         "nlaIntegration": {
             "enabled": true,
             "pidProperty": "nlaPid",
+            "agencyCode": "TO-DO",
+            "agencyName": "The University of Examples, Australia",
             "includeTest": {
                 "repository.name": "People"
             }
@@ -260,6 +262,12 @@
                     "enabledViews": ["published"],
                     "schema": "http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/home/orca/schemata/registryObjects.xsd",
                     "metadataNamespace": "http://ands.org.au/standards/rif-cs/registryObjects"
+                },
+                "eac-cpf": {
+                    "enabledInAllViews": false,
+                    "enabledViews": ["NLA_Harvest", "published"],
+                    "schema": "urn:isbn:1-931666-33-4 http://eac.staatsbibliothek-berlin.de/schema/cpf.xsd",
+                    "metadataNamespace": "urn:isbn:1-931666-33-4"
                 }
             }
         }
