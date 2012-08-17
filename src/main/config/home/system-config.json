@@ -108,7 +108,7 @@
         "curationRequiresConfirmation": false,
         "pidProperty": "localPid",
         "nlaIntegration": {
-            "enabled": true,
+            "enabled": false,
             "pidProperty": "nlaPid",
             "agencyCode": "TO-DO",
             "agencyName": "The University of Examples, Australia",
