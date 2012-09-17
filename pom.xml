@@ -297,7 +297,7 @@
     </repository>
   </repositories>
   <scm>
-    <scmUrl>https://github.com/redbox-mint/mint-build-dev-local</scmUrl>
+    <url>https://github.com/redbox-mint/mint-build-dev-local</url>
     <developerConnection>scm:git:https://github.com/redbox-mint/mint-build-dev-local</developerConnection>
   </scm>
 </project>
