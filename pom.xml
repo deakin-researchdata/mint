@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.redbox-mint</groupId>
   <artifactId>mint-local-curation-demo</artifactId>
-  <version>1.5.2.2-SNAPSHOT</version>
+  <version>1.5.2.2</version>
   <packaging>pom</packaging>
   <name>The Mint - Local Curation Demo</name>
   <parent>
@@ -303,7 +303,7 @@
   <scm>
     <url>https://github.com/redbox-mint/mint-build-dev-local</url>
     <developerConnection>scm:git:https://github.com/redbox-mint/mint-build-dev-local</developerConnection>
-    <tag>HEAD</tag>
+    <tag>mint-local-curation-demo-1.5.2.2</tag>
   </scm>
   <distributionManagement>
 		<snapshotRepository>
