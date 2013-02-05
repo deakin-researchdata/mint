@@ -3,19 +3,20 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.redbox-mint</groupId>
   <artifactId>mint-local-curation-demo</artifactId>
-  <version>1.5.2.3-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <version>1.6-SNAPSHOT</version>
+  <packaging>${packaging}</packaging>
   <name>The Mint - Local Curation Demo</name>
   <parent>
     <groupId>com.googlecode.redbox-mint</groupId>
     <artifactId>mint</artifactId>
-    <version>1.5.2.2</version>
+    <version>1.6-SNAPSHOT</version>
   </parent>
   <properties>
     <!-- Used in build -->
-    <mint.version>1.5.2.2</mint.version>
+    <mint.version>1.6-SNAPSHOT</mint.version>
     <!-- Runtime values, will replace placeholders
              in config and control scripts -->
+    <packaging>pom</packaging>
     <app.location.windows>${project.home}</app.location.windows>
     <app.location.linux>${project.home}</app.location.linux>             
     <server.port>9001</server.port>
@@ -103,6 +104,13 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>ide</id>
+      <properties>
+        <packaging>jar</packaging>
+        <project.home>../</project.home>
+      </properties>
     </profile>
   </profiles>
   <!-- The standard build/deploy process for making a server -->
