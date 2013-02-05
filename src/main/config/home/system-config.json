@@ -136,6 +136,12 @@
             "uri": "http://localhost:${jetty.port}/solr/anotar",
             "coreName": "anotar",
             "autocommit": true
+        },
+         "eventLog": {
+            "uri": "http://localhost:${jetty.port}/solr/eventlog",
+            "coreName": "eventlog",
+            "autocommit": false,
+            "embedded": false
         }
     },
     "transformerDefaults": {
@@ -235,6 +241,14 @@
             "default": {
                 "jsonconfig": "packaging-config.json",
                 "packages-in-package": false
+            },
+            "servicesUI": {
+                "jsonconfig": "servicesUI.json",
+                "packages-in-package": false
+            },
+            "servicesUI2": {
+                "jsonconfig": "servicesUI2.json",
+                "packages-in-package": false
             }
         },
         "harvestFiles": "${fascinator.home}/harvest",
@@ -289,5 +303,10 @@
             "failOnMissing": false
         },
         "migrationScript": ""
-    }
+    },
+    "api": {
+    		"published-records-by-type": { "className": "com.googlecode.fascinator.portal.api.impl.PublishedRecordsByTypeAPICallHandlerImpl"}
+    	}
+
+   
 }
