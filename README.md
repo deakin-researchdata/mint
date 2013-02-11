@@ -1,5 +1,7 @@
-Mint - Local Curation Demo
+Mint - Local Curation for Deakin University Australia
 ======================
+
+Mint Build for Deakin University
 
 Sample institutional build with file system storage and local curation.
 
