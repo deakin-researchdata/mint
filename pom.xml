@@ -14,7 +14,7 @@
   <properties>
     <!-- Used in build -->
     <mint.version>1.5.2.2</mint.version>
-    <project.home>/opt/researchdata/deakin/institution-build/build/mint</project.home>
+    <project.home>/opt/researchdata/mint</project.home>
     <!-- Runtime values, will replace placeholders
              in config and control scripts -->
     <app.location.windows>${project.home}</app.location.windows>

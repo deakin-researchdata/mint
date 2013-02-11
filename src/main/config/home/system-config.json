@@ -259,7 +259,7 @@
             "metadataFormats": {
                 "rif": {
                     "enabledInAllViews": false,
-                    "enabledViews": ["published"],
+                    "enabledViews": ["NLA_Harvest", "published"],
                     "schema": "http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/home/orca/schemata/registryObjects.xsd",
                     "metadataNamespace": "http://ands.org.au/standards/rif-cs/registryObjects"
                 },
