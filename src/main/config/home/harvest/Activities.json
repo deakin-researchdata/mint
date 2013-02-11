@@ -1,0 +1,80 @@
+{
+    "harvester": {
+        "type": "csv",
+        "csv": {
+            "fileLocation": "${fascinator.home}/data/deakin/Activities.csv",
+            "idColumn": "ID_RM_PROJECT",
+            "recordIDPrefix": "researchdata.deakin.edu.au/activities/",
+            "headerRow": true,
+            "delimiter": ",",
+            "ignoredFields": [],
+            "includedFields" : [
+		"ID_RM_PROJECT",
+		"ID_DR_PROJECT",
+		"ID",
+		"ID_OLD",
+		"Submit Year",
+		"Start year",
+		"Title",
+		"Description",
+		"Institution",
+		"Investigators",
+		"Discipline",
+		"Name",
+		"Type",
+		"Existence Start",
+		"Existence End",
+		"Primary Investigator",
+		"Website",
+		"ANZSRC FOR 1",
+		"ANZSRC FOR 2",
+		"ANZSRC FOR 3",
+		"ANZSRC FOR 1 NAME",
+		"ANZSRC FOR 2 NAME",
+		"ANZSRC FOR 3 NAME",
+		"ANZSRC FOR 1 PERCENT",
+		"ANZSRC FOR 2 PERCENT",
+		"ANZSRC FOR 3 PERCENT",
+		"ANZSRC FOR 1 PRI",
+		"ANZSRC FOR 2 PRI",
+		"ANZSRC FOR 3 PRI",
+		"Investigators CPerson",
+		"Investigator LDAP",
+		"Project Last Modify",
+		"Person Link Last Modify",
+		"Project Status"
+
+            ]
+        }
+    },
+
+    "transformer": {
+        "curation": ["local"],
+        "metadata": ["jsonVelocity"]
+    },
+    "curation": {
+        "neverPublish": false,
+        "alreadyCurated": false
+    },
+
+    "transformerOverrides": {
+	"local": {
+            "template": "${server.url.base}published/detail/[[OID]]"
+        },
+        "jsonVelocity": {
+            "templatesPath" : "${fascinator.home}/templates/activities",
+            "portalId": "Activities"
+        }
+    },
+
+    "indexer": {
+        "script": {
+            "type": "python",
+            "rules": "Activities.py"
+        },
+        "params": {
+            "repository.name": "Local Research Projects",
+            "repository.type": "Research Activities"
+        }
+    }
+}

@@ -2,9 +2,9 @@
     "harvester": {
         "type": "csv",
         "csv": {
-            "fileLocation": "${fascinator.home}/data/Services.csv",
+            "fileLocation": "${fascinator.home}/data/deakin/Services.csv",
             "idColumn": "ID",
-            "recordIDPrefix": "redbox-mint.googlecode.com/services/",
+            "recordIDPrefix": "researchdata.deakin.edu.au/services/",
             "headerRow": true,
             "delimiter": ",",
             "ignoredFields": [],

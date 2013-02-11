@@ -2,13 +2,13 @@
     "harvester": {
         "type": "csv",
         "csv": {
-            "fileLocation": "${fascinator.home}/data/People_Sample.csv",
+            "fileLocation": "${fascinator.home}/data/deakin/People.csv",
             "idColumn": "ID",
-            "recordIDPrefix": "redbox-mint.googlecode.com/parties/people/",
+            "recordIDPrefix": "researchdata.deakin.edu.au/parties/people/",
             "headerRow": true,
             "delimiter": ",",
             "ignoredFields": [],
-            "includedFields" : ["ID", "Given_Name", "Other_Names", "Family_Name", "Pref_Name", "Honorific", "Email", "Job_Title", "GroupID_1", "GroupID_2", "GroupID_3", "ANZSRC_FOR_1", "ANZSRC_FOR_2", "ANZSRC_FOR_3", "URI", "NLA_Party_Identifier", "ResearcherID", "openID", "Personal_URI", "Personal_Homepage", "Staff_Profile_Homepage", "Description"]
+            "includedFields" : [ "ID","Given_Name","Other_Names","Family_Name","Pref_Name","Honorific","Email","Job_Title","GroupID_1","GroupID_2","GroupID_3","ANZSRC_FOR_1","ANZSRC_FOR_2","ANZSRC_FOR_3","ANZSRC_FOR_CAT_1","ANZSRC_FOR_CAT_2","ANZSRC_FOR_CAT_3","ANZSRC_SEO_1","ANZSRC_SEO_2","ANZSRC_SEO_3","ANZSRC_SEO_CAT_1","ANZSRC_SEO_CAT_2","ANZSRC_SEO_CAT_3","URI","NLA_Party_Identifier","ResearcherID","SCOPUS_ID","ORCID","openID","Personal_URI","Personal_Homepage","Staff_Profile_Homepage","Related_Publications","Last_Modified_Date","LDAP_Mapping","Description" ]
         }
     },
 
@@ -27,17 +27,17 @@
             "sourcePath": ["data"],
             "relations": {
                 "GroupID_1": {
-                    "prefix": "redbox-mint.googlecode.com/parties/group/",
+                    "prefix": "researchdata.deakin.edu.au/parties/group/",
                     "relation": "isMemberOf",
                     "reverseRelation": "hasMember"
                 },
                 "GroupID_2": {
-                    "prefix": "redbox-mint.googlecode.com/parties/group/",
+                    "prefix": "researchdata.deakin.edu.au/parties/group/",
                     "relation": "isMemberOf",
                     "reverseRelation": "hasMember"
                 },
                 "GroupID_3": {
-                    "prefix": "redbox-mint.googlecode.com/parties/group/",
+                    "prefix": "researchdata.deakin.edu.au/parties/group/",
                     "relation": "isMemberOf",
                     "reverseRelation": "hasMember"
                 }

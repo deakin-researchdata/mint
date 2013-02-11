@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.googlecode.redbox-mint</groupId>
+  <groupId>au.edu.deakin.researchdata</groupId>
   <artifactId>mint-local-curation-demo</artifactId>
-  <version>1.5.2.3-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>pom</packaging>
-  <name>The Mint - Local Curation Demo</name>
+  <name>The Mint - Local Curation for Deakin</name>
   <parent>
     <groupId>com.googlecode.redbox-mint</groupId>
     <artifactId>mint</artifactId>
@@ -14,11 +14,13 @@
   <properties>
     <!-- Used in build -->
     <mint.version>1.5.2.2</mint.version>
+    <project.home>/opt/researchdata/deakin/institution-build/build/mint</project.home>
     <!-- Runtime values, will replace placeholders
              in config and control scripts -->
     <app.location.windows>${project.home}</app.location.windows>
     <app.location.linux>${project.home}</app.location.linux>             
-    <server.port>9001</server.port>
+    <server.domain>researchdata-dev.its.deakin.edu.au</server.domain>
+    <server.port>8080</server.port>
     <amq.port>9201</amq.port>
     <amq.stomp.port>9202</amq.stomp.port>
     <dir.home>${project.home}/home</dir.home>
@@ -27,9 +29,9 @@
     <dir.solr>${project.home}/solr</dir.solr>
     <dir.storage>${project.home}/storage</dir.storage>
     <dir.geonames>${dir.home}/geonames/solr</dir.geonames>
-    <server.url.base>http://${ip.address}:${server.port}/mint/</server.url.base>
+    <server.url.base>http://${server.domain}/mint/</server.url.base>
     <smtp.host>localhost</smtp.host>
-    <admin.email>admin@localhost</admin.email>
+    <admin.email>redbox-alerts@deakin.edu.au</admin.email>
     <!-- Control scripts try to auto-detect proxy. Use this value if you
              want Java to specifically exclude certain hosts from proxying. -->
     <non.proxy.hosts>localhost</non.proxy.hosts>
@@ -76,9 +78,6 @@
     <profile>
       <id>build-package</id>
       <properties>
-        <app.location.windows>c:/tf2/mint</app.location.windows>
-    	<app.location.linux>/opt/mint</app.location.linux>
-        <server.url.base>http://localhost:${server.port}/mint/</server.url.base>
       </properties>
       <!-- Used for creating an install - omits local build system settings -->
       <build>

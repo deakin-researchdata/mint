@@ -2,8 +2,8 @@
     "version": "1.1.0.1",
     "redbox.version.string": "${redbox.version}",
     "redbox.identity": {
-        "institution": "University of Examples",
-        "RIF-CS Group": "The University of Examples, Australia"
+        "institution": "Deakin University",
+        "RIF-CS Group": "Deakin University, Australia"
     },
     "configured": true,
     "urlBase": "${server.url.base}",
@@ -108,10 +108,10 @@
         "curationRequiresConfirmation": false,
         "pidProperty": "localPid",
         "nlaIntegration": {
-            "enabled": false,
+            "enabled": true,
             "pidProperty": "nlaPid",
-            "agencyCode": "TO-DO",
-            "agencyName": "The University of Examples, Australia",
+            "agencyCode": "AU-VDU",
+            "agencyName": "Deakin University, Australia",
             "includeTest": {
                 "repository.name": "People"
             }

@@ -2,9 +2,9 @@
     "harvester": {
         "type": "csv",
         "csv": {
-            "fileLocation": "${fascinator.home}/data/Group_Sample.csv",
+            "fileLocation": "${fascinator.home}/data/deakin/Group.csv",
             "idColumn": "ID",
-            "recordIDPrefix": "redbox-mint.googlecode.com/parties/group/",
+            "recordIDPrefix": "researchdata.deakin.edu.au/parties/group/",
             "headerRow": true,
             "delimiter": ",",
             "ignoredFields": [],
@@ -27,7 +27,7 @@
             "sourcePath": ["data"],
             "relations": {
                 "Parent_Group_ID": {
-                    "prefix": "redbox-mint.googlecode.com/parties/group/",
+                    "prefix": "researchdata.deakin.edu.au/parties/group/",
                     "relation": "isPartOf",
                     "reverseRelation": "hasPart"
                 }

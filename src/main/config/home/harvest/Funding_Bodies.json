@@ -1,0 +1,29 @@
+{
+    "harvester": {
+        "type": "csv",
+        "csv": {
+            "fileLocation": "${fascinator.home}/data/deakin/Funding_Bodies.csv",
+            "idColumn": "ID",
+            "recordIDPrefix": "researchdata.deakin.edu.au/funding_bodies/",
+            "headerRow": true,
+            "headerList": ["ID"],
+            "delimiter": ",",
+            "ignoredFields": [],
+            "includedFields" : ["ID"]
+        }
+    },
+    "curation": {
+        "neverPublish": true,
+        "alreadyCurated": true
+    },
+    "indexer": {
+        "script": {
+            "type": "python",
+            "rules": "Funding_Bodies.py"
+        },
+        "params": {
+            "repository.name": "Funding Bodies",
+            "repository.type": "Funding Bodies"
+        }
+    }
+}
