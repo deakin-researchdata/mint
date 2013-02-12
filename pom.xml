@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>au.edu.deakin.researchdata</groupId>
-  <artifactId>mint-local-curation-demo</artifactId>
+  <artifactId>mint-local-curation-deakin</artifactId>
   <version>1.0</version>
   <packaging>pom</packaging>
   <name>The Mint - Local Curation for Deakin</name>
@@ -14,13 +14,12 @@
   <properties>
     <!-- Used in build -->
     <mint.version>1.5.2.2</mint.version>
-    <project.home>/opt/researchdata/mint</project.home>
     <!-- Runtime values, will replace placeholders
              in config and control scripts -->
     <app.location.windows>${project.home}</app.location.windows>
     <app.location.linux>${project.home}</app.location.linux>             
-    <server.domain>researchdata-dev.its.deakin.edu.au</server.domain>
-    <server.port>8080</server.port>
+    <server.domain>localhost</server.domain>
+    <server.port>9001</server.port>
     <amq.port>9201</amq.port>
     <amq.stomp.port>9202</amq.stomp.port>
     <dir.home>${project.home}/home</dir.home>
@@ -31,7 +30,10 @@
     <dir.geonames>${dir.home}/geonames/solr</dir.geonames>
     <server.url.base>http://${server.domain}/mint/</server.url.base>
     <smtp.host>localhost</smtp.host>
-    <admin.email>redbox-alerts@deakin.edu.au</admin.email>
+    <admin.email>root@localhost</admin.email>
+
+    <!-- if using NLA testing server -->
+    <nla.testing>false</nla.testing>
     <!-- Control scripts try to auto-detect proxy. Use this value if you
              want Java to specifically exclude certain hosts from proxying. -->
     <non.proxy.hosts>localhost</non.proxy.hosts>
@@ -244,6 +246,29 @@
               </resources>
             </configuration>
           </execution>
+          <execution>
+            <id>copy-portal-scripts</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${dir.portal}</outputDirectory>
+              <includeEmptyDirs>true</includeEmptyDirs>
+              <overwrite>true</overwrite>
+              <resources>
+                <!-- Resolve some paths in our control scripts -->
+                <resource>
+                  <directory>src/main/config/portal</directory>
+                  <filtering>true</filtering>
+                  <includes>
+                    <includes>**/*.py</includes>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+ 
           <!-- Solr logging -->
           <execution>
             <id>copy-solr</id>
