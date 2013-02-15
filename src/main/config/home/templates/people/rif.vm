@@ -83,12 +83,16 @@
             ### Description
             #set ($value = $util.get($item, "data", "Description"))
             #if ("$!value" != "")
-            <description type="full">$util.encodeXml($value)</description>
-            #end
 
-            #set ($value = $util.get($item, "data", "Name"))
-            #if ("$!value" != "")
-            <description type="full">$util.encodeXml($util.get($item, "data", "Name"))</description>
+            <description type="full">$util.encodeXml($value)</description>
+
+            #else
+
+                #set ($value = $util.get($item, "data", "Name"))
+                #if ("$!value" != "")
+                <description type="full">$util.encodeXml($util.get($item, "data", "Name"))</description>
+                #end
+
             #end
 
             ### Relations

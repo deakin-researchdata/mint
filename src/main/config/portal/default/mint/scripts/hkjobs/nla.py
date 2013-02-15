@@ -41,14 +41,17 @@ class NlaData:
         else: 
             self.log.debug("Processing '{}' records", num)
 
-        # Now loop through each object and process
-        sru_testing = "${nla.testing}" :
+        # setting up SRU Client, reading configuration
+        # beaware that only string can pass into this script
+        sru_testing = self.config.getString("false", ["curation", "nlaIntegration", "useTestServer"])
         if sru_testing == "true" :
             # If using the NLA's test server, comment out the line above and uncomment the line below
             sru = SRUClient("http://www-test.nla.gov.au/apps/srw/search/peopleaustralia")
+            self.log.debug("Using NLA Test server")
         else:
             sru = SRUClient()
 
+        # Now loop through each object and process
         for record in result.getResults():
             success = self.process_record(record, sru)
             if not success:

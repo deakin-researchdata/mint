@@ -109,6 +109,7 @@
         "pidProperty": "localPid",
         "nlaIntegration": {
             "enabled": true,
+            "useTestServer": "${nla.useTestServer}" ,
             "pidProperty": "nlaPid",
             "agencyCode": "AU-VDU",
             "agencyName": "Deakin University, Australia",

@@ -16,6 +16,9 @@ export NON_PROXY_HOSTS="${non.proxy.hosts}"
 export TF_HOME="$PROJECT_HOME/home"
 export REDBOX_VERSION="${mint.version}"
 
+# Deakin specific directives
+export NLA_USETESTSERVER="${nla.useTestServer}"
+
 # java class path
 export CLASSPATH="plugins/*:lib/*"
 
@@ -26,6 +29,7 @@ JVM_OPTS="-XX:MaxPermSize=256m -Xmx512m"
 export SOLR_LOGS=$TF_HOME/logs/solr
 export JETTY_LOGS=$TF_HOME/logs/jetty
 export ARCHIVES=$TF_HOME/logs/archives
+
 if [ ! -d $ARCHIVES ]
 then
     mkdir -p $ARCHIVES
@@ -66,5 +70,8 @@ CONFIG_DIRS="-Dfascinator.home=$TF_HOME -Dportal.home=$PROJECT_HOME/portal -Dsto
 # additional settings
 EXTRA_OPTS="-Dserver.url.base=$SERVER_URL -Damq.port=$AMQ_PORT -Damq.stomp.port=$AMQ_STOMP_PORT -Dsmtp.host=$SMTP_HOST -Dadmin.email=$ADMIN_EMAIL -Dredbox.version=$REDBOX_VERSION"
 
+# Deakin specific settings
+DEAKIN_OPTS="-Dnla.useTestServer=$NLA_USETESTSERVER"
+
 # set options for maven to use
-export JAVA_OPTS="$JVM_OPTS $JETTY_OPTS $SOLR_OPTS $PROXY_OPTS $CONFIG_DIRS $EXTRA_OPTS $GEONAMES"
+export JAVA_OPTS="$JVM_OPTS $JETTY_OPTS $SOLR_OPTS $PROXY_OPTS $CONFIG_DIRS $EXTRA_OPTS $DEAKIN_OPTS $GEONAMES"
