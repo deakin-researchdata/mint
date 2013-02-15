@@ -246,29 +246,6 @@
               </resources>
             </configuration>
           </execution>
-          <execution>
-            <id>copy-portal-scripts</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${dir.portal}</outputDirectory>
-              <includeEmptyDirs>true</includeEmptyDirs>
-              <overwrite>true</overwrite>
-              <resources>
-                <!-- Resolve some paths in our control scripts -->
-                <resource>
-                  <directory>src/main/config/portal</directory>
-                  <filtering>true</filtering>
-                  <includes>
-                    <includes>**/*.py</includes>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
- 
           <!-- Solr logging -->
           <execution>
             <id>copy-solr</id>
