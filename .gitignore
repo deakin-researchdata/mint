@@ -1,4 +1,5 @@
 target/
 .settings/
 .project
-.svn
+.svn/
+./setting.xml
