@@ -8,8 +8,6 @@ export PROG_DIR=`cd \`dirname $0\`; pwd`
 # file to store pid
 PID_FILE=$PROG_DIR/tf.pid
 
-# display program header
-echo "The Fascinator - Mint - $REDBOX_VERSION"
 
 usage() {
 	echo "Usage: `basename $0` {start|stop|restart|status}"
@@ -28,6 +26,9 @@ running() {
 
 # configure environment
 . $PROG_DIR/tf_env.sh
+
+# display program header
+echo "The Fascinator - Mint - $REDBOX_VERSION"
 
 # perform action
 ACTION="$1"
