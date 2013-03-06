@@ -2,9 +2,9 @@
     "harvester": {
         "type": "csv",
         "csv": {
-            "fileLocation": "${fascinator.home}/data/deakin/Activities.csv",
-            "idColumn": "ID_RM_PROJECT",
-            "recordIDPrefix": "researchdata.deakin.edu.au/activities/",
+            "fileLocation": "${fascinator.home}/data/deakin/Activities_ARC.csv",
+            "idColumn": "URL_ADDRESS",
+            "recordIDPrefix": "http://purl.org/au-research/grants/arc/",
             "headerRow": true,
             "delimiter": ",",
             "ignoredFields": [],
@@ -50,18 +50,15 @@
     },
 
     "transformer": {
-        "curation": ["local"],
-        "metadata": ["jsonVelocity"]
+        "curation": [],
+        "metadata": []
     },
     "curation": {
-        "neverPublish": false,
-        "alreadyCurated": false
+        "neverPublish": true,
+        "alreadyCurated": true
     },
 
     "transformerOverrides": {
-	"local": {
-            "template": "${server.url.base}published/detail/[[OID]]"
-        },
         "jsonVelocity": {
             "templatesPath" : "${fascinator.home}/templates/activities",
             "portalId": "Activities"
@@ -74,7 +71,7 @@
             "rules": "Activities.py"
         },
         "params": {
-            "repository.name": "Local Research Projects",
+            "repository.name": "ARC Projects",
             "repository.type": "Research Activities"
         }
     }
