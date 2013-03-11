@@ -305,7 +305,65 @@
         "migrationScript": ""
     },
     "api": {
-    		"published-records-by-type": { "className": "com.googlecode.fascinator.portal.api.impl.PublishedRecordsByTypeAPICallHandlerImpl"}
+    		"published-records-by-type": { "className": "com.googlecode.fascinator.portal.api.impl.PublishedRecordsByTypeAPICallHandlerImpl"},
+        "mint-stats" : {
+            "className": "com.googlecode.fascinator.portal.api.impl.MintStatsAPICallHandlerImpl"
+            "stats":
+              {
+                "name" : "mint-all"
+                "query":"*:*",
+                "params": {
+                  "fq":["item_type:\"object\""],
+                  "rows":"100"
+                },
+                "fields" : [
+                  {
+                      "name":"mint-total",
+                      "label" : "total",                  
+                      "solr_field":"numFound",
+                      "solr_field_value":""                                                
+                  },
+                  {
+                    "name" : "parties_people",
+                    "label" : "parties_people",
+                    "solr_field":"display_type",
+                    "solr_field_value":"parties_people" 
+                  },
+                  {
+                    "name" : "parties_groups",
+                    "label" : "parties_groups",
+                    "solr_field":"display_type",
+                    "solr_field_value":"parties_groups" 
+                  },
+                  {
+                    "name" : "research_activities",
+                    "label" : "research_activities",
+                    "solr_field":"display_type",
+                    "solr_field_value":"research_activities" 
+                  },
+                  {
+                    "name" : "activities:",
+                    "label" : "activities:",
+                    "solr_field":"display_type",
+                    "solr_field_value":"research_activities",
+                    "groupby":"repository_name" 
+                  },
+                  {
+                    "name" : "services",
+                    "label" : "services",
+                    "solr_field":"display_type",
+                    "solr_field_value":"services" 
+                  },
+                  {
+                    "name" : "services:",
+                    "label" : "services:",
+                    "solr_field":"display_type",
+                    "solr_field_value":"services",
+                    "groupby":"repository_name" 
+                  }
+              ]
+            }
+        }
     	}
 
    
