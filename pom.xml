@@ -3,17 +3,17 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.redbox-mint</groupId>
   <artifactId>mint-local-curation-demo</artifactId>
-  <version>1.6-SNAPSHOT</version>
+  <version>1.6-RC01-SNAPSHOT</version>
   <packaging>${packaging}</packaging>
   <name>The Mint - Local Curation Demo</name>
   <parent>
     <groupId>com.googlecode.redbox-mint</groupId>
     <artifactId>mint</artifactId>
-    <version>1.6-SNAPSHOT</version>
+    <version>1.6-RC01-SNAPSHOT</version>
   </parent>
   <properties>
     <!-- Used in build -->
-    <mint.version>1.6-SNAPSHOT</mint.version>
+    <mint.version>1.6-RC01-SNAPSHOT</mint.version>
     <!-- Runtime values, will replace placeholders
              in config and control scripts -->
     <packaging>pom</packaging>
