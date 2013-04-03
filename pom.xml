@@ -9,11 +9,11 @@
   <parent>
     <groupId>com.googlecode.redbox-mint</groupId>
     <artifactId>mint</artifactId>
-    <version>1.6</version>
+    <version>1.6.1-SNAPSHOT</version>
   </parent>
   <properties>
     <!-- Used in build -->
-    <mint.version>1.6</mint.version>
+    <mint.version>1.6.1-SNAPSHOT</mint.version>
     <!-- Runtime values, will replace placeholders
              in config and control scripts -->
     <packaging>pom</packaging>
@@ -43,34 +43,34 @@
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>mint-project</artifactId>
       <type>pom</type>
-      <version>1.6</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>mint</artifactId>
       <type>pom</type>
-      <version>1.6</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>mint-config</artifactId>
-      <version>1.6</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>plugin-transaction-curation-mint</artifactId>
-      <version>1.6</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>sruclient-mint</artifactId>
-      <version>1.6</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <!-- Mint Curation Plugin -->
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>plugin-transformer-local</artifactId>
-      <version>1.6</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <profiles>
