@@ -307,11 +307,12 @@
     },
     "api": {
     		"published-records-by-type": { "className": "com.googlecode.fascinator.portal.api.impl.PublishedRecordsByTypeAPICallHandlerImpl"},
+        "countries":{ "className": "com.googlecode.fascinator.portal.api.impl.CountryLookupAPICallHandlerImpl"},
         "mint-stats" : {
-            "className": "com.googlecode.fascinator.portal.api.impl.MintStatsAPICallHandlerImpl"
+            "className": "com.googlecode.fascinator.portal.api.impl.MintStatsAPICallHandlerImpl",
             "stats":
               {
-                "name" : "mint-all"
+                "name" : "mint-all",
                 "query":"*:*",
                 "params": {
                   "fq":["item_type:\"object\""],
