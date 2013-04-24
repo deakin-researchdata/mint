@@ -17,8 +17,8 @@
         "metadata": ["jsonVelocity"]
     },
     "curation": {
-        "neverPublish": false,
-        "alreadyCurated": false
+        "neverPublish": true,
+        "alreadyCurated": true
     },
 
     "transformerOverrides": {
