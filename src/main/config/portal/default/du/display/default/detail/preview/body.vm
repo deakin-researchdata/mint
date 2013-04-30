@@ -1,0 +1,68 @@
+
+#macro(displayBodyField $metadata $key)
+    <tr>
+        <th width="25%">$parent.getFriendlyName($key)</th>
+        <td>
+            #set($valueList = $metadata.getList($key))
+            #if($valueList.size() > 1)
+                #foreach($value in $valueList)
+                    <span class="meta-value">$self.escape($value)</span><br/>
+                #end
+            #else
+                $self.escape($valueList.get(0))
+            #end
+        </td>
+    </tr>
+#end
+
+<table class="meta">
+#set($display_type = $metadata.getString("empty","display_type"))
+
+#if( $display_type=="parties_people" && !$page.authentication.is_admin())
+
+    #displayBodyField($metadata, "dc_title")
+    #displayBodyField($metadata, "Pref_Name")
+    #displayBodyField($metadata, "Honorific")
+    #displayBodyField($metadata, "Given_Name")
+    #displayBodyField($metadata, "Other_Names")
+    #displayBodyField($metadata, "Family_Name")
+    #displayBodyField($metadata, "Job_Title")
+    #displayBodyField($metadata, "Email")
+    ##displayBodyField($metadata, "WorkPhone")
+    ##displayBodyField($metadata, "School")
+    #displayBodyField($metadata, "Description")
+    #displayBodyField($metadata, "ANZSRC_FOR_1")
+    #displayBodyField($metadata, "ANZSRC_FOR_CAT_1")
+    #displayBodyField($metadata, "ANZSRC_FOR_2")
+    #displayBodyField($metadata, "ANZSRC_FOR_CAT_2")
+    #displayBodyField($metadata, "ANZSRC_FOR_3")
+    #displayBodyField($metadata, "ANZSRC_FOR_CAT_3")
+    #displayBodyField($metadata, "ANZSRC_SEO_1")
+    #displayBodyField($metadata, "ANZSRC_SEO_CAT_1")
+    #displayBodyField($metadata, "ANZSRC_SEO_2")
+    #displayBodyField($metadata, "ANZSRC_SEO_CAT_2")
+    #displayBodyField($metadata, "ANZSRC_SEO_3")
+    #displayBodyField($metadata, "ANZSRC_SEO_CAT_3")
+    #displayBodyField($metadata, "Staff_Profile_Homepage")
+ 
+#else
+
+    #foreach($key in $metadata.getJsonObject().keySet())
+    <tr>
+        <th width="25%">$parent.getFriendlyName($key)</th>
+        <td>
+            #set($valueList = $metadata.getList($key))
+            #if($valueList.size() > 1)
+                #foreach($value in $valueList)
+                    <span class="meta-value">$self.escape($value)</span><br/>
+                #end
+            #else
+                $self.escape($valueList.get(0))
+            #end
+        </td>
+    </tr>
+    #end
+
+#end
+
+</table>
