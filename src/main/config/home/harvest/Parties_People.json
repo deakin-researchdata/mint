@@ -8,7 +8,7 @@
             "headerRow": true,
             "delimiter": ",",
             "ignoredFields": [],
-            "includedFields" : [ "ID","Given_Name","Other_Names","Family_Name","Pref_Name","Honorific","Email","Job_Title","GroupID_1","GroupID_2","GroupID_3","ANZSRC_FOR_1","ANZSRC_FOR_2","ANZSRC_FOR_3","ANZSRC_FOR_CAT_1","ANZSRC_FOR_CAT_2","ANZSRC_FOR_CAT_3","ANZSRC_SEO_1","ANZSRC_SEO_2","ANZSRC_SEO_3","ANZSRC_SEO_CAT_1","ANZSRC_SEO_CAT_2","ANZSRC_SEO_CAT_3","URI","NLA_Party_Identifier","ResearcherID","SCOPUS_ID","ORCID","openID","Personal_URI","Personal_Homepage","Staff_Profile_Homepage","Related_Publications","Last_Modified_Date","LDAP_Mapping","Description" ]
+            "includedFields" : [ "ID","Given_Name","Other_Names","Family_Name","Pref_Name","Honorific","Email","Workphone","Job_Title","GroupID_1","GroupID_2","GroupID_3","ANZSRC_FOR_1","ANZSRC_FOR_2","ANZSRC_FOR_3","ANZSRC_FOR_CAT_1","ANZSRC_FOR_CAT_2","ANZSRC_FOR_CAT_3","ANZSRC_SEO_1","ANZSRC_SEO_2","ANZSRC_SEO_3","ANZSRC_SEO_CAT_1","ANZSRC_SEO_CAT_2","ANZSRC_SEO_CAT_3","URI","NLA_Party_Identifier","ResearcherID","SCOPUS_ID","ORCID","openID","Personal_URI","Personal_Homepage","Staff_Profile_Homepage","Related_Publications","Last_Modified_Date","LDAP_Mapping","Description","PERSON_TYPE","PROJECT_COUNT","TITLE_TEXT","DRO_AUTHOR_ID","RSD_PUB_PERSON_CODE","SCHOOL_NAME","FACULTY_NAME","PIPE" ]
         }
     },
 
