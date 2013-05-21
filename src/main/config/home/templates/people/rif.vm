@@ -19,6 +19,12 @@
         <party type="person">
             <identifier type="uri">$util.encodeXml($pid)</identifier>
 
+            ### DRO Author ID as identifier here
+             #set ($author_id = $util.get($item, "data", "DRO_AUTHOR_ID"))
+            #if ("$!author_id" != "")
+            <identifier type="uri">http://dro.deakin.edu.au/list/author_id/$util.encodeXml($author_id)</identifier>
+            #end
+
             ### Name
             <name type="primary">
 
