@@ -4,12 +4,10 @@
         <th width="25%">$parent.getFriendlyName($key)</th>
         <td>
             #set($valueList = $metadata.getList($key))
-            #if($valueList.size() > 1)
+            #if($valueList.size() > 0)
                 #foreach($value in $valueList)
                     <span class="meta-value">$self.escape($value)</span><br/>
                 #end
-            #else
-                $self.escape($valueList.get(0))
             #end
         </td>
     </tr>
@@ -38,24 +36,13 @@
     #displayBodyField($metadata, "ANZSRC_SEO_CAT_1")
     #displayBodyField($metadata, "ANZSRC_SEO_CAT_2")
     #displayBodyField($metadata, "ANZSRC_SEO_CAT_3")
+    #displayBodyField($metadata, "DRO_AUTHOR_ID")
     #displayBodyField($metadata, "Staff_Profile_Homepage")
  
 #else
 
     #foreach($key in $metadata.getJsonObject().keySet())
-    <tr>
-        <th width="25%">$parent.getFriendlyName($key)</th>
-        <td>
-            #set($valueList = $metadata.getList($key))
-            #if($valueList.size() > 1)
-                #foreach($value in $valueList)
-                    <span class="meta-value">$self.escape($value)</span><br/>
-                #end
-            #else
-                $self.escape($valueList.get(0))
-            #end
-        </td>
-    </tr>
+        #displayBodyField($metadata, $key)
     #end
 
 #end
