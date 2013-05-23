@@ -44,7 +44,7 @@
             }
         },
         "local": {
-            "template": "${server.url.base}published/detail/[[OID]]"
+            "template": "${server.url.base}published/persist/[[OID]]"
         },
         "jsonVelocity": {
             "templatesPath" : "${fascinator.home}/templates/people",
