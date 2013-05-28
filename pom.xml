@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.redbox-mint</groupId>
   <artifactId>mint-local-curation-demo</artifactId>
-  <version>1.6.2-SNAPSHOT</version>
+  <version>1.6.1-SNAPSHOT</version>
   <packaging>${packaging}</packaging>
   <name>The Mint - Local Curation Demo</name>
   <parent>
     <groupId>com.googlecode.redbox-mint</groupId>
     <artifactId>mint</artifactId>
-    <version>1.6.1</version>
+    <version>1.6.1-SNAPSHOT</version>
   </parent>
   <properties>
     <!-- Used in build -->
@@ -43,35 +43,42 @@
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>mint-project</artifactId>
       <type>pom</type>
-      <version>1.6.1</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>mint</artifactId>
       <type>pom</type>
-      <version>1.6.1</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>mint-config</artifactId>
-      <version>1.6.1</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>plugin-transaction-curation-mint</artifactId>
-      <version>1.6.1</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>sruclient-mint</artifactId>
-      <version>1.6.1</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
     <!-- Mint Curation Plugin -->
     <dependency>
       <groupId>com.googlecode.redbox-mint</groupId>
       <artifactId>plugin-transformer-local</artifactId>
-      <version>1.6.1</version>
+      <version>1.6.1-SNAPSHOT</version>
     </dependency>
+    <!-- Clean up a dependency error raised during 1.6.1 redbox release -->
+    <dependency>
+      <groupId>com.googlecode.the-fascinator</groupId>
+      <artifactId>fascinator-portal</artifactId>
+      <type>warpath</type>
+      <version>1.1.4</version>
+    </dependency>    
   </dependencies>
   <profiles>
     <profile>
