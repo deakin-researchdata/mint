@@ -29,7 +29,7 @@
     <dir.solr>${project.home}/solr</dir.solr>
     <dir.storage>${project.home}/storage</dir.storage>
     <dir.geonames>${dir.home}/geonames/solr</dir.geonames>
-    <server.url.base>http://${server.domain}/mint/</server.url.base>
+    <server.url.base>https://${server.domain}/mint/</server.url.base>
     <smtp.host>localhost</smtp.host>
     <admin.email>root@localhost</admin.email>
 
