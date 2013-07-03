@@ -4,7 +4,7 @@
         "csv": {
             "fileLocation": "${fascinator.home}/data/deakin/Services.csv",
             "idColumn": "ID",
-            "recordIDPrefix": "researchdata.deakin.edu.au/services/",
+            "recordIDPrefix": "research-data.deakin.edu.au/services/",
             "headerRow": true,
             "delimiter": ",",
             "ignoredFields": [],

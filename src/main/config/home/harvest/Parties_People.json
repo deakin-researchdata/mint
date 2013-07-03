@@ -4,7 +4,7 @@
         "csv": {
             "fileLocation": "${fascinator.home}/data/deakin/People.csv",
             "idColumn": "ID",
-            "recordIDPrefix": "researchdata.deakin.edu.au/parties/people/",
+            "recordIDPrefix": "research-data.deakin.edu.au/parties/people/",
             "headerRow": true,
             "delimiter": ",",
             "ignoredFields": [],
@@ -27,17 +27,17 @@
             "sourcePath": ["data"],
             "relations": {
                 "GroupID_1": {
-                    "prefix": "researchdata.deakin.edu.au/parties/group/",
+                    "prefix": "research-data.deakin.edu.au/parties/group/",
                     "relation": "isMemberOf",
                     "reverseRelation": "hasMember"
                 },
                 "GroupID_2": {
-                    "prefix": "researchdata.deakin.edu.au/parties/group/",
+                    "prefix": "research-data.deakin.edu.au/parties/group/",
                     "relation": "isMemberOf",
                     "reverseRelation": "hasMember"
                 },
                 "GroupID_3": {
-                    "prefix": "researchdata.deakin.edu.au/parties/group/",
+                    "prefix": "research-data.deakin.edu.au/parties/group/",
                     "relation": "isMemberOf",
                     "reverseRelation": "hasMember"
                 }
